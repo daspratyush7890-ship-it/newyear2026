@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Build Your 2026</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(to bottom, #020024, #090979, #000);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+    }
+
+    .box {
+        width: 360px;
+        padding: 30px;
+        border: 2px solid #00ffcc;
+        border-radius: 10px;
+        background: rgba(0,0,0,0.6);
+    }
+
+    h1 {
+        color: #ffd700;
+    }
+
+    .options button {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 16px;
+        background: #00ffcc;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- Step 1 -->
+<div class="box" id="step1">
+    <h1>🎯 Choose a Goal</h1>
+    <div class="options">
+        <button onclick="nextStep(1)">Growth</button>
+        <button onclick="nextStep(1)">Peace</button>
+        <button onclick="nextStep(1)">Success</button>
+    </div>
+</div>
+
+<!-- Step 2 -->
+<div class="box hidden" id="step2">
+    <h1>🔁 Pick a Habit</h1>
+    <div class="options">
+        <button onclick="nextStep(2)">Consistency</button>
+        <button onclick="nextStep(2)">Self-belief</button>
+        <button onclick="nextStep(2)">Discipline</button>
+    </div>
+</div>
+
+<!-- Step 3 -->
+<div class="box hidden" id="step3">
+    <h1>💫 Choose a Feeling</h1>
+    <div class="options">
+        <button onclick="finishGame()">Confidence</button>
+        <button onclick="finishGame()">Happiness</button>
+        <button onclick="finishGame()">Hope</button>
+    </div>
+</div>
+
+<!-- Wish -->
+<div class="box hidden" id="wish">
+    <h1>🎉 Welcome 2026 🎉</h1>
+    <p>
+        You didn’t just enter 2026,<br>
+        you designed it.<br><br>
+        May this year reward<br>
+        your choices and courage.
+    </p>
+    <p style="margin-top:20px;color:#00ffcc;">
+        — Happy New Year<br>
+        PRATYUSH
+    </p>
+</div>
+
+<script>
+    function nextStep(step) {
+        document.getElementById("step" + step).classList.add("hidden");
+        document.getElementById("step" + (step + 1)).classList.remove("hidden");
+    }
+
+    function finishGame() {
+        document.getElementById("step3").classList.add("hidden");
+        document.getElementById("wish").classList.remove("hidden");
+    }
+</script>
+
+</body>
+</html>
